@@ -1,0 +1,25 @@
+{
+   "name": "red-build-init",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "test": "npm-run-all test:*",
+      "init-project": "npm install && npm-run-all init:*",
+      "init:dirs": "mkdirp components",
+      "init:files": "touch README.md index.html script.js style.css components/App.js components/Gif.js components/Search.js",
+      "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+      "start": "babel script.js --watch --out-file script-compiled.js"
+   },
+   "keywords": [],
+   "author": "Piotr Nowinski",
+   "license": "ISC",
+   "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-preset-latest": "^6.24.1",
+      "mkdirp": "^0.5.1",
+      "npm-run-all": "^4.1.5",
+      "superagent": "^5.0.5",
+      "tar": "^4.4.8"
+   }
+}
